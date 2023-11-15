@@ -1,15 +1,13 @@
 from pynput import keyboard
 from pynput.keyboard import Controller, Key
+import json  # Import the json module
 
 keyboard_controller = Controller()
-expansions = {
-    "brb": "be right back", 
-    "omw": "on my way",
-    "acmgreen": "Verified that ACM light is green on the TMC. ",
-    "acmred": "Verified that ACM light is red on the TMC. ",
-    "shoulderl": "Verified that lane is a shoulder lane. Shoulder lanes do not have normal traffic."
 
-    }
+# Load expansions from a JSON file
+with open('shortcuts.json', 'r') as file:
+    expansions = json.load(file)
+
 current_word = ""  # To keep track of the currently typed word
 
 def on_press(key):
