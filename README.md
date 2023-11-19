@@ -1,4 +1,7 @@
+![TypeSwift Banner](/docs/typeswift.png)
+
 # TypeSwift
+
 TypeSwift is a lightweight and user-friendly text expander tool that aims to enhance your typing experience. It allows you to create and utilize custom keyboard shortcuts for frequently used phrases and expressions, significantly reducing your typing time and effort.
 
 ## Features
