@@ -15,12 +15,30 @@ TypeSwift is a lightweight and user-friendly text expander tool that aims to enh
 
 To get started with TypeSwift, clone this repository and install the necessary dependencies.
 ```
-pip install pynput
+pip install -r requirements.txt
 ```
 
 ## Usage
 After installing TypeSwift, you can run the script to start using your custom shortcuts. The script will run in the background, listening for your defined shortcuts and expanding them in real-time as you type.
 
 ```
-python typeswift.py
+python src
+```
+
+## Create Virtual Environment
+If you want to isolate the dependencies for this program away from the python dependencies installed on your machine, you can create a a virtual environmnent by running the following command:
+```
+python -m venv myenv
+```
+Then activate the environment by running the following command:
+```
+source myenv/bin/activate
+```
+Then install the dependencies.
+```
+pip install -r requirements.txt
+```
+Exit the environment anytime by running the command:
+```
+deactivate
 ```

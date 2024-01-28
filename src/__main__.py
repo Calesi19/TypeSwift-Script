@@ -1,11 +1,15 @@
 from pynput import keyboard
 from pynput.keyboard import Controller, Key
-import json  # Import the json module
+import json
+import os
 
 keyboard_controller = Controller()
 
 # Load expansions from a JSON file
-with open('shortcuts.json', 'r') as file:
+dir_path = os.path.dirname(os.path.realpath(__file__))
+shortcuts_file = os.path.join(dir_path, 'shortcuts.json')
+
+with open(shortcuts_file, 'r') as file:
     expansions = json.load(file)
 
 current_word = ""  # To keep track of the currently typed word
@@ -31,6 +35,7 @@ def on_press(key):
         pass
 
 def replace_word():
+    global current_word
     if current_word in expansions:
         # Delete the shortcut word
         for _ in range(len(current_word) + 1):
@@ -41,5 +46,10 @@ def replace_word():
         expanded_text = expansions[current_word]
         keyboard_controller.type(expanded_text)
 
-with keyboard.Listener(on_press=on_press) as listener:
-    listener.join()
+def main():
+    # Starting the keyboard listener
+    with keyboard.Listener(on_press=on_press) as listener:
+        listener.join()
+
+if __name__ == "__main__":
+    main()
