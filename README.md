@@ -1,4 +1,4 @@
-![TypeSwift Banner](/docs/typeswift.png)
+![TypeSwift Banner](/docs/banner.png)
 
 # TypeSwift
 
